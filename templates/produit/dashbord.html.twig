@@ -1,20 +1,29 @@
-dashbord.html.twig
-{% extends base.html.twig %}
+{% extends 'base.html.twig' %}
+
 {% block body %}
-{% extends base.html.twig %}
-{% block body %}
-<ul class="nav">
-  <li class="nav-item">
-    <a class="nav-link active" href="(path{app_produit_index})">Active</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="(path{app_produit_new})"></a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" href="#">Disabled</a>
-  </li>
-</ul>
-{% endblock body %}
+<div class="container mt-4">
+  <ul class="nav nav-pills nav-fill bg-light p-3 rounded shadow-sm">
+    <li class="nav-item">
+      <a class="nav-link active" href="{{ path('app_produit_index') }}">
+        🛒 Produits
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{ path('app_produit_new') }}">
+        ➕ Ajouter un produit
+      </a>
+    </li>
+    {# Exemple avec id fictif pour démonstration #}
+    <li class="nav-item">
+      <a class="nav-link" href="{{ path('app_produit_show', {'id': 1}) }}">
+        👁️ Voir un produit
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+        🚫 Désactivé
+      </a>
+    </li>
+  </ul>
+</div>
+{% endblock %}
